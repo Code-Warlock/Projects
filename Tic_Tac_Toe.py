@@ -1,10 +1,11 @@
-from IPython.display import clear_output
-from colorama import Fore
+# from IPython.display import clear_output
+# from colorama import Fore
 from random import randrange
 import time
 def draw_board(board):
-    clear_output()
-    return Fore.MAGENTA + f"""
+    # clear_output()
+    print("\n" * 20)
+    return f"""
                       {board[1]}  |   {board[2]}  |   {board[3]}
                          |      |
                     _____|______|_______
@@ -55,7 +56,7 @@ while True:
         play(the_board,mark,position)
         print(draw_board(the_board))
         if win_check(the_board,mark):
-            print(Fore.BLUE + "Player 1 has won!")
+            print("Player 1 has won!")
             the_board = ["#"]
             the_board.extend([" "] * 10)
             if not replay():
@@ -97,7 +98,7 @@ while True:
         print(draw_board(the_board))
 
         if win_check(the_board,mark):
-            print(Fore.BLUE + "Player 2 has won!")
+            print("Player 2 has won!")
             the_board = ["#"]
             the_board.extend([" "] * 10)
             if not replay():
